@@ -1,0 +1,41 @@
+@charset "ISO-8859-1";
+
+.card-portfolio {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1rem;
+}
+
+.holding-info {
+	margin-top: 2rem;
+}
+
+.container {
+	width: 60%;
+}
+
+.table-align {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	margin: auto;
+}
+
+td {
+	padding-right: 30px;
+}
+
+.card-footer-div {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	width: 10rem;
+	text-align: center;
+}
+
+.input-width {
+	width: 2rem;
+}
+
+.padding-right {
+	padding-right: 2rem;
+}

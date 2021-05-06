@@ -1,0 +1,50 @@
+@charset "ISO-8859-1";
+
+.login {
+	width: 30%;
+	margin-left: auto;
+	display: flex;
+	flex-direction: column;
+	color: #808080;
+}
+.register {
+	width: 30%;
+	margin-right: auto;
+	display: flex;
+	flex-direction: column;
+	color: #808080;
+}
+
+.login-container {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	margin: auto;
+	margin-top: 1.5rem;
+}
+
+input {
+	margin-bottom: 1rem;
+	border-radius: 10px;
+	width: 25rem;
+	height: 3rem;
+	background-color:white;
+}
+
+hr {
+	width: 25rem;
+}
+
+.g-signin2 {
+	margin-bottom: 2rem;
+}
+
+.g-sign {
+	margin: auto;
+	margin-top: 1rem;
+}
+
+.red {
+	color: white;
+	background-color: maroon;
+}

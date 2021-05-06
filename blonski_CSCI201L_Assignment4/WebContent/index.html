@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Insert title here</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="./stylesheets/index.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="./scripts/index.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg">
+		  <div class="container-fluid">
+		    <a class="navbar-brand" href="#">Sal Stocks</a>
+		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		      <span class="navbar-toggler-icon"></span>
+		    </button>
+		    <div class="collapse navbar-collapse" id="navbarNav">
+		      <ul class="navbar-nav ms-auto">
+		        <li class="nav-item">
+		          <a class="nav-link active" aria-current="page" href="/blonski_CSCI201L_Assignment4/index.html">Home / Search</a>
+		        </li>
+		        <li class="nav-item" id="nav-login">
+		          <a class="nav-link" href="/blonski_CSCI201L_Assignment4/login.html">Login / Sign Up</a>
+		        </li>
+		        <li class="nav-item" id="nav-favorites">
+		          <a class="nav-link" href="/blonski_CSCI201L_Assignment4/favorites.html">Favorites</a>
+		        </li>
+		        <li class="nav-item" id="nav-portfolio">
+		          <a class="nav-link" href="/blonski_CSCI201L_Assignment4/portfolio.html">Portfolio</a>
+		        </li>
+		        <li class="nav-item" id="nav-logout">
+		          <a class="nav-link" href="#" onclick={handleLogout()}>Logout</a>
+		        </li>
+		      </ul>
+		    </div>
+		  </div>
+		</nav>
+		
+		<div class="info-page container c1" id="company-info" style="display: none;">
+			<div class="info-left">
+				<div class="to-center">
+					<h5 class="ticker" id="ticker"></h5>
+										
+					<h6 class="company-name" id="company-name"></h6>
+					<p class="exchange" id="exchange"></p>
+					
+					<div class="summary">
+						<span>Summary</span>
+					</div>
+					
+					<hr />
+					<p id="high"> </p>
+					<p id="low"> </p>
+					<p id="open"> </p>
+					<p id="close"> </p>
+					<p id="volume"> </p>
+					<hr />
+					
+					<div class="company-description">
+						<h5>Company Description</h5>
+					</div>
+					
+				</div>
+				<p id="start-date"></p>
+				<p id="description"></p>
+			</div>
+		</div>
+		
+		<div class="info-page container c3" id="company-info-logged-in" style="display: none;">
+			<div class="info-left">
+				<div class="top">
+					<div class="top-left">
+						<h5 class="lg-ticker" id="lg-ticker"></h5>
+						
+						<span class="lg-favorite-btn" id="lg-fav-btn" hidden onclick={toggleStar()}><i class="fa fa-star-o" id="fav"></i></span>
+						
+						<h6 class="company-name" id="lg-company-name"></h6>
+						<p class="exchange" id="lg-exchange"></p>
+						
+						<div class="lg-user-input" style="display: none;" id="lg-user-input">
+							<label class="lg-quantity-label">Quantity: </label>
+							<input class="lg-quantity-input" id="qty-input" onkeypress="return isNumberKey(this, event);">
+							<br />
+							<button class="lg-btn btn btn-success" onclick={handleBuy()} >Buy</button>
+						</div>
+					</div>
+					<div class="top-right" id="top-right">
+						<div class="info-right-above">
+							<h2 id="last"></h2>
+						</div>
+						<div class="info-right-below">
+							<h3 id="caret-span"><i class="fa fa-caret-up" id="caret"></i>  </h3>
+							<h3 id="change"></h3>
+							<h3 id="percent"></h3>
+						</div>
+						<span id="change-date"></span>
+					</div>
+				</div>
+				<div class="rest">
+					
+					<br />
+					<div class="timeHolder">
+						<span class="open-or-closed" id="open-or-closed"></span>
+					</div>
+					<br />
+					<div class="summary">
+						<span class="sum">Summary</span>
+					</div>
+					<hr />
+					<div class="pricing-info">
+						<table class="price-table">
+							<tr>
+								<th id="lg-high"> </th>
+								<th id="lg-mid"> </th>
+							</tr>
+							<tr>
+								<th id="lg-low"> </th>
+								<th id="lg-ap"> </th>
+							</tr>
+							<tr>
+								<th id="lg-open"> </th>
+								<th id="lg-as"> </th>
+							</tr>
+							<tr>
+								<th id="lg-close"> </th>
+								<th id="lg-bp"> </th>
+							</tr>
+							<tr>
+								<th id="lg-volume"> </th>
+								<th id="lg-bs"> </th>
+							</tr>
+						
+						</table>
+					</div>
+					
+					
+					<hr />
+					<div class="company-description">
+						<h5>Company Description</h5>
+					</div>
+					<p id="lg-start-date"></p>
+					<p id="lg-description"></p>
+				</div>
+			</div>
+			
+		</div>
+		
+		<div class="container c2" id="search">
+			<div class="main-page" id="mainpage">
+				<h5 class="header"> SEARCH STOCKS </h5>
+				<div class="wrap">
+				   <div class="search">
+				      <input type="text" class="searchTerm" placeholder="Search by ticker..." id="searchbar">
+				      <button type="submit" class="searchButton" onclick={handleSearch()}>
+				        <i class="fa fa-search"></i>
+				     </button>
+				   </div>
+				</div>
+			</div>
+		</div>
+		
+	
+	</body>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/85dc16b3e2.js" crossorigin="anonymous"></script>
+</html>

@@ -1,0 +1,130 @@
+@charset "ISO-8859-1";
+
+.main-page {
+	justify-content: space-around;
+	margin: auto;
+	text-align: center;
+}
+
+.navbar {
+	background-color: #8080ff!important;
+	color: white !important;
+}
+
+.navbar a {
+	color: white;
+}
+
+.main-page {
+	margin-top: 15%;
+}
+
+.header {
+	margin: 5%;
+	font-size: 3rem;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+.searchTerm {
+  width: 30%;
+  border: 3px solid #8080ff;
+  padding: 5px;
+  height: 36px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: black;
+  margin: 0;
+}
+
+.searchTerm:focus{
+  color: black;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #8080ff;
+  background: #8080ff;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  margin: 0;
+}
+
+.c1 {
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1.5rem;
+}
+
+.to-center {
+	text-align: center;
+}
+
+.lg-favorite-btn {
+	font-size: 1.5rem;
+}
+
+.lg-ticker {
+	display: inline-block;
+}
+
+.lg-quantity-input {
+	width: 50px;
+}
+
+.timeHolder {
+	text-align: center;
+}
+
+.fa-star {
+	color: yellow;
+}
+
+.top-left {
+	float: left;
+}
+
+.top-right {
+	margin-top: 2rem;
+	float: right;
+	text-align: right;
+}
+
+.top {
+	margin-top: 2rem;
+	height: 15rem;
+}
+
+.info-right-below {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+.pricing-info {
+	align-items: center;
+}
+
+.price-table {
+	margin: auto;
+}
+
+th {
+	padding: 0 1rem;
+}
+
+.summary {
+	text-align: center;
+}
+
+.company-description {
+	text-align: center;
+}

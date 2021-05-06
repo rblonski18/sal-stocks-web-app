@@ -1,0 +1,38 @@
+@charset "ISO-8859-1";
+
+.fav-card {
+	margin-top: 2rem;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.top {
+	margin-top: 2rem;
+	height: 15rem;
+}
+
+.info-right-below {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+.fav-left {
+	margin-top: auto;
+	margin-bottom: auto;
+	float: left;
+	margin-left: 1rem;
+}
+
+.fav-right {
+	margin-top: auto;
+	margin-bottom: auto;
+	float: right;
+	text-align: right;
+	margin-right: 1rem;
+}
+
+.delete-fav {
+	background-color: white;
+	border: 2px solid white;
+}
