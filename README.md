@@ -1,0 +1,8 @@
+# Sal Stocks
+Last individual assignment of CSCI 201 - Principles of Software Development. It's a web app that allows users to search for stocks, "trade" them, add them to their favorites, and see real time pricing. Per the assignment sheet: The program will allow users to search for stocks, add them to their list of favorites, and do stock transactions for these stocks. This means you’ll need to use a variety of different APIs, as well as implement a database to keep track of user information, stock portfolio, etc.
+
+The requirements involved: the backend being written in Java, using Web Servlets to respond to fetch requests from the front-end, and a JDBC Connector to handle operations involving the MySQL database (create user, login user, grab user favorites, add to favorites, add trade to portfolio, etc.). There were no requirements for the front-end, only that the app needed to be importable to Eclipse to be ran for grading, and the graders wouldn't be downloading any external dependencies. I would have liked to build the front-end in React, but I chose to steer away from potential build issues upon the grader importing the project, so it's just written in HTML/CSS/JS. 
+
+Requests to Tiingo Stock Pricing API were handled by a proxy servlet in order to avoid CORS errors of sending fetch requests on the front-end. I would have liked to give stock searches their own pages, but the project was required to dynamically fill a div on the index.html page with stock information upon searching, so spare the long JavaScript files. If you'd like to see my React code, look at my LAVenture project. 
+
+Lastly, for what it's worth, I got a 100 on this project. 
